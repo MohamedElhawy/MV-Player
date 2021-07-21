@@ -1,0 +1,239 @@
+/* general setup */
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+html , body{
+    width: 100vw;
+    height: 100vh;
+}
+
+/* making video container fit body */
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 900px;
+    height: 500px;
+}
+video{
+    width: 900px;
+    height: 500px;
+    object-fit: fill;
+    border-radius: 15px;
+}
+
+/* change background color */
+body{
+    background-color: snow;
+}
+
+/* adding a controls container to the video container */
+.videoControlsContainer{
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 15%;
+    background-color: rgba(0,0,0,50%);
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    opacity: 0;
+}
+/* to make controls container toggle to visible hover */
+.videoControlsContainer:hover{
+    opacity: 1;
+}
+
+/* adding play btn image to the container */
+.playBtn{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    background-image: url(resources/img/playBtnVideoPlayer.png);
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+    -webkit-background-size: 50px 50px;
+    -moz-background-size: 50px 50px;
+    -o-background-size: 50px 50px;
+    cursor: pointer;
+}
+.soundBtn{
+    position: absolute;
+    left: 71px;
+    bottom: 19px;
+    width: 33px;
+    height: 33px;
+    background-image: url(resources/img/loudSpeakerBtnVideoPlayer.png);
+    background-repeat: no-repeat;
+    background-size: 33px 33px;
+    -webkit-background-size: 33px 33px;
+    -moz-background-size: 33px 33px;
+    -o-background-size: 33px 33px;
+    cursor: pointer;
+}
+.sliderContainer{
+    position: absolute;
+    left: 160px;
+    bottom: 26px;
+    width: 565px;
+    height: 20px;
+}
+.slider{
+    width: 100%;
+    height: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 10px;
+    background-color: gold;
+}
+.slider:hover{
+    opacity: 1;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    background: url('resources/img/app8ThemeIcon.png');
+    background-size: 30px 30px;
+    cursor: pointer;
+  }
+  .slider::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+    border: 0;
+    background: url('resources/img/app8ThemeIcon.png');
+    background-size: 30px 30px;
+    cursor: pointer;
+  }
+  /* video timer */
+  .videoTiming{
+    position: absolute;
+    left: 586px;
+    bottom: 0px;
+    width: 145px;
+    height: 20px;
+    color: gold;
+    font-family: sans-serif , monospace;
+    font-weight: bold;
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+  }
+  /* loop button style */
+  .loopBtn{
+    position: absolute;
+    left: 117px;
+    bottom: 19px;
+    width: 33px;
+    height: 33px;
+    background-image: url(resources/img/loopVideo1.png);
+    background-repeat: no-repeat;
+    background-size: 33px 33px;
+    -webkit-background-size: 33px 33px;
+    -moz-background-size: 33px 33px;
+    -o-background-size: 33px 33px;
+    cursor: pointer;
+  }
+  /* full screen button for video */
+  .fsBtn{
+    position: absolute;
+    left: 849px;
+    bottom: 19px;
+    width: 35px;
+    height: 35px;
+    background-image: url(resources/img/fullScreenVideo.png);
+    background-repeat: no-repeat;
+    background-size: 35px 35px;
+    -webkit-background-size: 35px 35px;
+    -moz-background-size: 35px 35px;
+    -o-background-size: 35px 35px;
+    cursor: pointer;
+  }
+
+  /* responsive : Pixel 2XL (max-width 411px) */
+  @media screen and (max-width: 420px)
+  {
+    /* fizing the video container sizes and position */
+    .container{
+        top: 25%;
+        left: 3%;
+        transform: none;
+        width: 350px;
+        height: 300px;
+    }
+    /* fizing the video sizes and position */
+    video{
+        width: 350px;
+        height: 300px;
+    }
+    /* fizing the video controls sizes and position */
+    .videoControlsContainer{
+        opacity: 1;
+        width: 100%;
+    }
+    .sliderContainer{
+        left: 120px;
+        bottom: 15px;
+        width: 50%;
+        height: 20px;
+    }
+    .videoTiming{
+        left: 180px;
+        bottom: -3px;
+        width: 75px;
+        font-size: x-small;
+    }
+    .fsBtn{
+        left: 315px;
+        bottom: 265px;
+    }
+    /* fixing the buttons sizes */
+    .playBtn , .soundBtn , .loopBtn , .fsBtn{
+        width: 23px;
+        height: 23px;
+        background-size: 23px 23px;
+        -webkit-background-size: 23px 23px;
+        -moz-background-size: 23px 23px;
+        -o-background-size: 23px 23px;
+    }
+    .playBtn{
+        width: 25px;
+        height: 25px;
+        background-size: 25px 25px;
+        -webkit-background-size: 25px 25px;
+        -moz-background-size: 25px 25px;
+        -o-background-size: 25px 25px;
+    }
+    /* fixing the buttons positions */
+    .playBtn{
+        bottom: 12px;
+    }
+    .soundBtn{
+        left: 50px;
+        bottom: 14px;
+    }
+    .loopBtn{
+        left: 85px;
+        bottom: 14px;
+    }
+    body{
+        overflow: hidden;
+    }
+
+
+  }

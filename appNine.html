@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html>
+    <!-- meta data -->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <title>MV Player</title>
+        <meta name="description" content="Video player developed by MilionSoft.">
+        <link rel="icon" href="resources/img/app9Thumbnail.png">
+        <link rel="bookmark" href="resources/img/app9Thumbnail.png">
+        <link rel="stylesheet" href="appNineStyle.css">
+        <script src="appNineJs.js" defer></script>
+    </head>
+
+    <!-- page data -->
+    <body>
+        <div class="container" id="container">
+            <!-- video -->
+            <video onended="togglePlaybtn()" onclick="toggleVideo()" poster="resources/img/MVPlayerPoster4.png" ontimeupdate="settingVideoSlider();displayTime();" playsinline>
+                <source src="resources/vid/Seoul_Compressed.mp4" type="video/mp4" >
+                Your browser does not support the video format.
+            </video>
+
+            <!-- video controls container -->
+            <div class="videoControlsContainer" id="videoControlsContainer">
+                <!-- play button -->
+                <span class="playBtn" id="playBtn" onclick="toggleVideo()"></span>
+                <!-- sound button -->
+                <span class="soundBtn" id="soundBtn" onclick="toggleSound()"></span>
+                <!-- video slider -->
+                <div class="sliderContainer" id="sliderContainer">
+                    <input type="range" min="0" max="0" value="0" class="slider" id="slider" onclick="sliderClicked(event)">
+                    <div class="videoTiming" id="videoTiming"></div>
+                </div>
+                <!-- video loop -->
+                <span class="loopBtn" id="loopBtn" onclick="toggleLoop()"></span>
+                <!-- video full screen -->
+                <span class="fsBtn" id="fsBtn" onclick="togglefs()"></span>
+            </div>
+
+        </div>
+    </body>
+
+</html>
